@@ -1,0 +1,88 @@
+<table mat-table [dataSource]="stores">
+
+  <ng-container matColumnDef="actions">
+    <th width='15%' mat-header-cell *matHeaderCellDef> Actions </th>
+
+    <td mat-cell *matCellDef="let store">
+      <div class="button-rows">
+         <button title="Modifier" mat-button (click)="openModal('editModalVille',store)"><i class="material-icons">edit</i></button>
+        <button title="Supprimer" mat-button  color="warn"><i class="material-icons">remove_circle_outline</i></button>
+        <mat-slide-toggle [checked]= "store.status" (change)="toggle(store.id)"></mat-slide-toggle>
+      </div>
+
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let store"> {{store.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef> Date</th>
+    <td mat-cell *matCellDef="let store"> {{store.dateTime}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="owner">
+    <th mat-header-cell *matHeaderCellDef> proprietaire</th>
+    <td mat-cell *matCellDef="let store"> {{store.vendor.name}} </td>
+  </ng-container>
+
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<div class="bottom-button">
+  <button title="Modifier" mat-flat-button color="primary" (click)="openModal('createModalVille')">
+    Ajouter Boutique<i class="material-icons">add</i>
+  </button>
+</div>
+
+<ngx-smart-modal #itemModal1 identifier="createModalVille">
+  <form method="get" class="form-horizontal" role="form" #ff="ngForm" (ngSubmit)="onCreateSubmit(ff)">
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Ajouter Boutique</h4>
+    </div>
+
+    <div class="modal-body">
+
+      <mat-form-field>
+        <input matInput placeholder="Nom" name="namecity" ngModel required #namecity="ngModel">
+      </mat-form-field>
+
+    </div>
+
+    <div class="modal-footer">
+      <button mat-button type="button" (click)="closeModal('createModalVille')">Annuler</button>
+      <button mat-button color="primary" type="submit">Create</button>
+    </div>
+
+  </form>
+</ngx-smart-modal>
+
+<ngx-smart-modal #itemModal identifier="editModalVille">
+  <form method="get" class="form-horizontal" role="form" #f="ngForm" (ngSubmit)="onEditSubmit(f,store.id)">
+    <div *ngIf="store; else loading">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Modifier Store: {{store.name}}</h4>
+      </div>
+
+      <div class="modal-body">
+
+        <mat-form-field>
+          <input matInput placeholder="Nom" name="namecity" ngModel='{{store.name}}' #namecity="ngModel">
+        </mat-form-field>
+
+      </div>
+
+      <div class="modal-footer">
+        <button mat-button type="button" (click)="closeModal('editModalVille')">Annuler</button>
+        <button mat-button color="primary" type="submit">Modifier</button>
+      </div>
+    </div>
+  </form>
+</ngx-smart-modal>

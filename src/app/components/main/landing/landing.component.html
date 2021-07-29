@@ -1,0 +1,121 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+  <div class="form-group has-search">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <input type="text" class="form-control" placeholder="Search" [(ngModel)]="keyword" style="width: 400px;"> 
+    
+    
+
+
+
+
+
+    <div class="dropdown">
+      <button
+        class="btn btn-primary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton"  [ngSwitch]="expression" >
+
+        <li (mouseover)="switcher('tel')">telephonie</li>
+        <ul *ngSwitchCase="'tel'">
+        <li (click)="change('smartphone')">smartphone</li>
+        <li (click)="change('tablette')">tablette</li>
+        </ul>
+
+
+        <li (mouseover)="switcher('veh')">vehicule</li>
+        <ul *ngSwitchCase="'veh'">
+        <li (click)="change('voiture')">voiture</li>
+        <li (click)="change('camion')">camion</li>
+        </ul>
+       
+        </ul>
+    </div>
+    
+    
+    <button class="btn btn-success" (click)="search()"> go! </button>
+  </div>
+
+
+<app-search [category]="category"></app-search>
+
+
+
+
+
+
+  <div class="row row-cols-1 row-cols-md-5 g-1"  *ngIf="Scrapedproducts">
+    <div class="col" *ngFor="let p of   Scrapedproducts">
+      <div class="card" (click)="show(p)">
+        <img
+          src="{{p.image}}"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{p.price}}</h5>
+          <p class="card-text">
+          {{p.title}}
+          </p>
+        </div>
+      </div>
+    </div>
+  
+   
+
+  </div>
+
+
+
+
+
+
+</div>
+

@@ -1,0 +1,90 @@
+/*
+.main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+    width: 900px;
+    margin-left: 400px;
+    margin-top: 300px;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width:400px;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}*/
+
+
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top:-6px;
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+    text-decoration: underline;
+    transform: rotate(-90deg);
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input{height: 50px;}
+.form-group{
+  height: 50px;
+  margin-top: 400px;
+  margin-left: 600px;
+
+    display: flex;
+}
+.btn{
+
+    height: 35px; margin-top: auto;
+}
+
+.card{
+
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 20px;
+    padding: 10px;
+  }
+

@@ -1,0 +1,15 @@
+.form-control{
+
+    width: 0px;
+}
+#form{
+margin-left: 200px;
+    max-width: 400px;
+}
+body {
+    margin: 0;
+    font-family: Roboto, sans-serif;
+    background:white;
+    
+  }
+  .row{display:flex;}

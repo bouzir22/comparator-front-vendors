@@ -1,0 +1,127 @@
+
+
+<div class=" content">
+    <div class=" row">
+      <div class=" col-md-8">
+        <div class=" card">
+          <div class=" card-header"><h5 class=" title">Edit Profile</h5></div>
+          <div class=" card-body">
+            <form  [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+              <div class=" row">
+
+        
+                <div class=" col-md-5 pr-md-1">
+                  <div class=" form-group">
+                    <label> Nom </label>
+                    <input  formControlName="name"
+                      class=" form-control"
+                      placeholder="mike"
+                      type="text"
+                   
+                    />
+                  </div>
+                </div>
+             
+                <div class=" col-md-4 pl-md-1">
+                  <div class=" form-group">
+                    <label for="exampleInputEmail1"> Email address </label>
+                    <input
+                    formControlName="email"
+                      class=" form-control"
+                      placeholder="mike@email.com"
+                      type="email"
+                    />
+                  </div>
+                </div>
+
+
+
+                <div class=" col-md-3 px-md-1">
+                    <div class=" form-group">
+                      <label> password </label>
+                      <input  formControlName="password"
+                        class=" form-control"
+                        placeholder="Username"
+                        type="password"
+                        formControlName="password"
+                     
+                      />
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+              <div class=" row">
+                <div class=" col-md-6 pr-md-1">
+                  <div class=" form-group">
+                    <label> Boutique</label>
+                    <input 
+                    formControlName="storeName"
+                      class=" form-control"
+                      placeholder="Store"
+                      type="text"
+                      value="Mike"
+                    />
+                  </div>
+                </div>
+                <div class=" col-md-6 pl-md-1">
+                  <div class=" form-group">
+                    <label> categorie </label>
+                    <mat-form-field>    
+                        <mat-select placeholder="" [(value)]="selected" formControlName="category">    
+                            <mat-option>-- Select Any --</mat-option>    
+                            <mat-option value="cat1">Electro</mat-option>    
+                            <mat-option value="cat2">Phones</mat-option>    
+                            <mat-option value="cat3">Varieter</mat-option>    
+                        </mat-select>    
+                    </mat-form-field>    
+                  </div>
+                </div>
+              </div>
+             
+        
+              <div class=" row">
+                <div class=" col-md-8">
+                  <div class=" form-group">
+                    <label> tags </label>
+                    <textarea
+                      class=" form-control"
+                      cols="80"
+                      placeholder="Here can be your description"
+                      rows="4"
+                      value="Mike"
+                    >
+  Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.
+  </textarea
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class=" card-footer">
+                <button class=" btn btn-fill btn-danger">Save</button>
+              </div>
+
+
+            </form>
+          </div>
+          
+        </div>
+      </div>
+      <div class=" col-md-4">
+       
+
+
+      </div>
+    </div>
+  </div>
+  
+    
